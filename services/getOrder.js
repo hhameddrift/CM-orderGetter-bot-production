@@ -16,8 +16,16 @@ const orderGetter = async (contactAttributes) => {
   };
   return axios(config)
     .then((res) => {
-        console.log(res.data.data.opStatus)
-        return res.data.data.opStatus
+    
+    if (res.data.success == true) {
+        console.log(response.data.data.opStatus)
+              return res.data.data.opStatus
+
+    }
+    else {
+      console.log("ERROR - Request Status message ---> " + response.data.message);
+
+    }
     
     })
     .catch((err) => {
