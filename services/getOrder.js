@@ -18,12 +18,12 @@ const orderGetter = async (contactAttributes) => {
     .then((res) => {
     
     if (res.data.success == true) {
-        console.log(response.data.data.opStatus)
+        console.log(res.data.data.opStatus)
               return res.data.data.opStatus
 
     }
     else {
-      console.log("ERROR - Request Status message ---> " + response.data.message);
+      console.log("ERROR - Request Status message ---> " + res.data.message);
 
     }
     
