@@ -16,8 +16,7 @@ const orderGetter = async (contactAttributes) => {
   };
   return axios(config)
     .then((res) => {
-    
-    if (res.data.success == true) {
+      if (res.data.success == true) {
         console.log(res.data.data.opStatus)
               return res.data.data.opStatus
 
@@ -26,7 +25,6 @@ const orderGetter = async (contactAttributes) => {
       console.log("ERROR - Request Status message ---> " + res.data.message);
 
     }
-    
     })
     .catch((err) => {
       console.log("ERR CODE ---> " + err);
