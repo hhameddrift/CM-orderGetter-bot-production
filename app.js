@@ -1,20 +1,18 @@
-//const webhookRouter = require("./routes/webhookRouter")
+require('dotenv').config()
 const {processWebhook} = require("./controllers/webhookController")
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
-const config = process.env
-const PORT = config.PORT
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/webhook', processWebhook); 
+
+if (!process.env.LAMBDA_TASK_ROOT) {
+  app.listen(7001, () => console.log(`App initialized on port: 7001`));
+}
 
 
 
-app.use(express.static("public"))
-app.use(bodyParser.json())
-app.get('/', function(req, res) {
-
-    // ejs render automatically looks in the views folder
-    res.render('index');
-});
-//app.post("/", webhookRouter.router)
-app.post("/", processWebhook)
-app.listen(PORT, () => console.log(`Testing app listening on port ${PORT}`))
+// Export your express server so you can import it in the lambda function.
+module.exports = app
