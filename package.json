@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vendia/serverless-express": "^4.10.1",
     "axios": "^0.24.0",
     "body-parser": "^1.19.1",
     "dotenv": "^10.0.0",
@@ -17,5 +18,14 @@
   },
   "engines": {
     "node": "14.17.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhameddrift/CM-orderGetter-bot-production.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hhameddrift/CM-orderGetter-bot-production/issues"
+  },
+  "homepage": "https://github.com/hhameddrift/CM-orderGetter-bot-production#readme"
 }
